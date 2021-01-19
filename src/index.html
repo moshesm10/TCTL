@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="app-header__titles">
+                <div class="app-header__titles-title">
+                    <img src='./img/logo.svg' class="App-logo" alt="logo" />
+                    <h1>TED Context translation by Level</h1>
+                </div>
+                <div class="app-header__titles-sub-title">
+                    <h2>Паралельный корпус по лекциям TED с уровнями сложности</h2>
+                </div>
+            </div>
+            <div class="search-block">
+                <div class="search-block__search-panel">
+                    <span class="search-block__search-panel-icon"><img src="./img/searchIcon.svg" alt="search icon"></span>
+                    <input class="search-block__search-panel-input" placeholder="Введите слово">
+                </div>
+                <div class="search-block__langswitch">
+                    <label>
+                        <input type="radio" name="lang" value="ruRU" checked="">
+                        <div class="search-block__langswitch-input_ru">
+                            <img src="./img/rus.svg" alt="search icon">
+                        </div>
+                    </label>
+                    <label>
+                        <input type="radio" name="lang" value="enEN">
+                        <div class="search-block__langswitch-input_en">
+                            <img src="./img/eng.svg" alt="search icon">
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <button class="search-button">Поиск</button>
+        </header>
+        
+    </div>
+    <script src="./js/bundle.js"></script>
+</body>
+</html>
