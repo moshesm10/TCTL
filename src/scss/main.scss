@@ -23,6 +23,7 @@ $light-grey: #A5A5A5;
 $white: #FFF;
 $grey-placeholder: #e3e3e3;
 $accent: #532F9D;
+$second-accent: #3400A0;
 
 // == Screens ==
 $screen-xs-min: 345px;
@@ -61,10 +62,26 @@ h2 {
     padding: 0 25px;
 }
 
-.app-header {
+// == Big / small header ==
+.app-header.big {
+    max-width: 100%;
+    margin-top: 0;
+    display: flex;
+    align-items: baseline;
+
+    @media (max-width: $screen-xs-max) {
+        flex-direction: column;
+    }
+}
+
+.app-header.small {
     max-width: 768px;
     margin: 25vh auto 0;
+}
 
+
+// == Header ==
+.app-header {
     &__titles {
         background-color: $white;
         display: flex;
@@ -193,6 +210,18 @@ h2 {
             margin-right: 0;
         }
     }
+
+    @media (max-width: $screen-md-max) {
+        &__search-panel {
+            &-input {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+
+    }
 }
 
 .search-button {
@@ -218,4 +247,116 @@ h2 {
     @media (max-width: $screen-xs-max) {
         width: 100%;
     }
+}
+
+// == Level selector ==
+.level_selector__wrapper {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.level-selector {
+    display: flex;
+    justify-content: space-between;
+    max-width: 650px;
+    height: 50px;
+    padding: 5px;
+    margin: 0 auto;
+
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+
+    background: #FFFFFF;
+    box-shadow: 2px 4px 21px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 40px;
+
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        height: 100%;
+        width: 160px;
+        background: $white;
+        border-radius: 40px;
+
+        input:checked + & {
+            color: $white;
+            background: $accent;
+            transition: .3s;
+        }
+
+        &:hover {
+            box-sizing: border-box;
+            border: 2px $accent solid;
+            transition: .2s;
+        }
+    }
+
+    label {
+        height: 100%;
+    }
+
+    input {
+        display: none;
+    }
+
+    @media (max-width: $screen-md-max) {
+        font-size: 12px;
+
+        &__label {
+            width: 120px;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        height: auto;
+        margin-top: 20px;
+        flex-direction: column;
+
+        label {
+            height: 50px;
+        }
+    }
+}
+
+// == Translation sentences ==
+
+.translation {
+
+    &-word-title {
+        margin-top: 20px;
+
+        h3 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 42px;
+        
+            color: #000000;
+        }
+    }
+
+    &-row {
+        display: flex;
+        padding: 15px 0px;
+        border-top: 1px solid #DCDCDC;
+
+        p {
+            display: block;
+            margin-right: 30px;
+            flex: 1;
+        
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        &__colored {
+            color: $second-accent;
+        }
+    }
+
+
 }

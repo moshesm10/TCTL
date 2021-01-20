@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <header class="app-header">
+        <header class="app-header small">
             <div class="app-header__titles">
                 <div class="app-header__titles-title">
                     <img src='./img/logo.svg' class="App-logo" alt="logo" />
@@ -40,7 +40,61 @@
             </div>
             <button class="search-button">Поиск</button>
         </header>
-        
+        <section class="level_selector__wrapper">
+            <div class="level-selector" style="display: none;">
+                <label>
+                    <input class="level-selector__input" type="radio" id="level_radio_1" name="level-button" value="1" checked="">
+                    <div class="level-selector__label">Elementary</div>
+                </label>
+                <label>
+                    <input class="level-selector__input" type="radio" id="level_radio_2" name="level-button" value="2">
+                    <div class="level-selector__label">Intermediate</div>
+                </label>
+                <label>
+                    <input class="level-selector__input" type="radio" id="level_radio_3" name="level-button" value="3">
+                    <div class="level-selector__label">Upper intermediate</div>
+                </label>
+                <label>
+                    <input class="level-selector__input" type="radio" name="level-button" value="4">
+                    <div class="level-selector__label">Advanced</div>
+                </label>
+            </div>
+        </section>
+        <section class="translation" style="display: none;">
+            <div class="translation-word-title">
+                <h3>ТУТ</h3>
+            </div>
+            <div class="sent-lines lvl1">
+                <div class='translation-row'>
+                    <p class="translation-row__colored">1 А если вы думаете, что что-то вам не идет, то, видимо, тут вы тоже правы.</p>
+                    <p>1 And if you don`t think you look good in something, you`re also probably right.</p>
+                </div>
+            </div>
+            <div class="sent-lines lvl2">
+                <div class='translation-row'>
+                    <p class="translation-row__colored">2 Но тут я почувствовал, как порывом ветра из долины меня сносит, и то, что было небольшим снегопадом, быстро превратилось в настоящую метель.</p>
+                    <p>2 But that was the point that I felt this wind gush through the valley and hit me, and what started as this light snowfall quickly became a full-on blizzard, and I started to lose perception of where I was.</p>
+                </div>
+            </div>
+            <div class="sent-lines lvl3">
+                <div class='translation-row'>
+                    <p class="translation-row__colored">3 Теперь это не чудак-одиночка, и их не двое, три — это уже толпа, а толпа значит: тут что-то есть!</p>
+                    <p>3 Now it`s not a lone nut, it`s not two nuts — three is a crowd, and a crowd is news.</p>
+                </div>
+            </div>
+            <div class="sent-lines lvl4">
+                <div class='translation-row'>
+                    <p class="translation-row__colored">4.1 Но, возможно, мы не увидели тут главного вывода.</p>
+                    <p>4.1 Okay, but we might have missed the real lesson here.</p>
+                </div>
+                <div class='translation-row'>
+                    <p class="translation-row__colored">4.2 Но, возможно, мы не увидели тут главного вывода.</p>
+                    <p>4.2 Okay, but we might have missed the real lesson here.</p>
+                </div>
+            </div>
+            
+        </section>
+
     </div>
     <script src="./js/bundle.js"></script>
 </body>
