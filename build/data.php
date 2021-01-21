@@ -2,6 +2,7 @@
 
 include "connection.php";
 
+$_POST = json_decode(array_keys($_POST)[0], true);
 $word = mb_strtoupper($_POST['word'], 'UTF-8');
 $word = trim($word);
 $lang = $_POST['lang'];
@@ -14,16 +15,10 @@ if ($lang == "ru_RU") {
 	$id_sentence_table_selector = "id_sentence_eng";
 }
 
-
-//$rows = getDataByWord($word, $link, $id_sentence_table_selector, $lang_table_selector);
-
-
-
-
-//================ phpmorphy ===============
+// == Phpmorphy ==
 require_once( 'phpmorphy/src/common.php');
  
-// путь к каталогу со словарями
+// == Path to dicts ==
 $dir = 'phpmorphy/dicts';
  
 $opts = array(
@@ -38,9 +33,8 @@ try {
 
 $lemmatize_word = $morphy->lemmatize($word, phpMorphy::NORMAL);
 
-// считаем и выводим все леммы
+// == Count and display all lemmas ==
 $counter = count($lemmatize_word);
-
 
 for ($i=0; $i < $counter; $i++) { 
 	$query = "SELECT `$id_sentence_table_selector` FROM `lemmas` WHERE `$lang_table_selector` LIKE '$lemmatize_word[$i]'";
@@ -59,19 +53,9 @@ for ($i=0; $i < $counter; $i++) {
 		    $rows[] = $data;
 		}
 		$rows[] = $lemmatize_word[$i];
-		
-		$datas[] = $rows;
-		
+		$datas[] = $rows;	
 	}
-	
 }
 echo json_encode($datas);
-
-
-//print_r($lemmatize_word);
-
-//mysqli_close($link);
-
-
 
 ?>

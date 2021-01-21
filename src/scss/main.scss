@@ -49,12 +49,12 @@ h1 {
 }
   
 h2 {
+  font-family: 'Work Sans';
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
   color: $light-grey;
 }
-
 
 .container {
     max-width: 1200px;
@@ -77,6 +77,12 @@ h2 {
 .app-header.small {
     max-width: 768px;
     margin: 25vh auto 0;
+}
+
+.error-message {
+    margin: 70px 0;
+    text-align: center;
+    color: $light-grey;
 }
 
 
@@ -218,10 +224,6 @@ h2 {
             }
         }
     }
-
-    @media (max-width: $screen-sm-max) {
-
-    }
 }
 
 .search-button {
@@ -288,7 +290,7 @@ h2 {
             transition: .3s;
         }
 
-        &:hover {
+        &:not(.nohover):hover {
             box-sizing: border-box;
             border: 2px $accent solid;
             transition: .2s;
@@ -355,6 +357,10 @@ h2 {
 
         &__colored {
             color: $second-accent;
+        }
+
+        @media (max-width: $screen-xs-max) {
+            flex-direction: column;
         }
     }
 

@@ -28,6 +28,7 @@ h1 {
   color: #595959; }
 
 h2 {
+  font-family: 'Work Sans';
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -50,6 +51,11 @@ h2 {
 .app-header.small {
   max-width: 768px;
   margin: 25vh auto 0; }
+
+.error-message {
+  margin: 70px 0;
+  text-align: center;
+  color: #A5A5A5; }
 
 .app-header__titles {
   background-color: #FFF;
@@ -191,7 +197,7 @@ h2 {
       color: #FFF;
       background: #532F9D;
       transition: .3s; }
-    .level-selector__label:hover {
+    .level-selector__label:not(.nohover):hover {
       box-sizing: border-box;
       border: 2px #532F9D solid;
       transition: .2s; }
@@ -233,3 +239,6 @@ h2 {
     line-height: 21px; }
   .translation-row__colored {
     color: #3400A0; }
+  @media (max-width: 575px) {
+    .translation-row {
+      flex-direction: column; } }
