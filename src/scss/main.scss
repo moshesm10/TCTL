@@ -34,7 +34,7 @@ $screen-sm-max: 767px;
 $screen-md-max: 991px;
 $screen-lg-max: 1199px;
   
-  
+// == Common ==
 body {
   margin: 0;
   font-family: 'Work Sans';
@@ -270,7 +270,7 @@ h2 {
     font-size: 14px;
     text-align: center;
 
-    background: #FFFFFF;
+    background: $white;
     box-shadow: 2px 4px 21px 8px rgba(0, 0, 0, 0.05);
     border-radius: 40px;
 
@@ -327,7 +327,6 @@ h2 {
 // == Translation sentences ==
 
 .translation {
-
     &-word-title {
         margin-top: 20px;
 
@@ -363,6 +362,4 @@ h2 {
             flex-direction: column;
         }
     }
-
-
 }
