@@ -128,33 +128,46 @@ const getData = async (lang, word) => {
             });
         }
     } else {
+        resetLevelSelectorLabels();
         resetOldData();
         searchingWordLabel.innerHTML = '';
         errorMessageLabel.textContent = 'Этого слова у нас нет, попробуете поискать другое';
     }
 };
 
+// == Submit func ==
+const submitFunction = () => {
+    const word = document.querySelector('.search-block__search-panel-input').value;
+    const lang = document.querySelector('.search-block__langswitch-input-val:checked').value;
+
+    if (word) {
+        // == Style ==
+        header.classList.remove('small');
+        header.classList.add('big');
+        searchBlock.style.margin = '0 auto';
+        searchBlock.style.padding = '0 20px';
+        title.style.display = 'none';
+        titles.style.flexDirection = 'column';
+        searchButton.style.marginTop = '20px';
+        levelSelector.style.display = '';
+        translationBlock.style.display = '';
+
+        getData(lang, word);
+    };
+};
+
 // == Search button click event ==
     searchButton.addEventListener('click', (e) => {
         e.preventDefault();
-        const word = document.querySelector('.search-block__search-panel-input').value;
-        const lang = document.querySelector('.search-block__langswitch-input-val:checked').value;
-
-        if (word) {
-            // == Style ==
-            header.classList.remove('small');
-            header.classList.add('big');
-            searchBlock.style.margin = '0 auto';
-            searchBlock.style.padding = '0 20px';
-            title.style.display = 'none';
-            titles.style.flexDirection = 'column';
-            searchButton.style.marginTop = '20px';
-            levelSelector.style.display = '';
-            translationBlock.style.display = '';
-
-            getData(lang, word);
-        };
+        submitFunction();
     });
+
+// == Enter click event ==
+document.body.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        submitFunction();
+    }
+  });
 
 // == Level selector interaction ==
     const displayNoneFunction = (selector) => {
