@@ -9,7 +9,7 @@
 <div align="center">
   <h3>
     <span> | </span>
-    <a href="http://a0413857.xsph.ru/tctl/">
+    <a href="https://moshesm.ru/tctl/">
       Visit TCTL (TED Context translation by Level)
     </a>
     <span> | </span>
